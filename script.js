@@ -1,4 +1,4 @@
-const API_URL = "https://training-day17-project.onrender.com";
+const API_URL = "https://training-day17-project.onrender.com/api/users";
 const authSection = document.getElementById("auth-section");
 const loginContainer = document.getElementById("login-container");
 const signupContainer = document.getElementById("signup-container");
