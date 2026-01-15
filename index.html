@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Dashboard</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div id="auth-section">
+        <div id="login-container">
+          <h2>Admin Login</h2>
+          <form id="login-form">
+            <input type="email" id="login-email" placeholder="Email" required />
+            <input
+              type="password"
+              id="login-pass"
+              placeholder="Password"
+              required
+            />
+            <button type="submit" class="btn-add">Login</button>
+          </form>
+          <p>
+            Don't have an account? <a href="#" onclick="toggleAuth()">Signup</a>
+          </p>
+        </div>
+
+        <div id="signup-container" class="hidden">
+          <h2>Create Account</h2>
+          <form id="signup-form">
+            <input
+              type="text"
+              id="signup-name"
+              placeholder="Full Name"
+              required
+            />
+            <input
+              type="email"
+              id="signup-email"
+              placeholder="Email"
+              required
+            />
+            <input
+              type="password"
+              id="signup-pass"
+              placeholder="Password"
+              required
+            />
+            <button type="submit" class="btn-add">Sign Up</button>
+          </form>
+          <p>
+            Already have an account?
+            <a href="#" onclick="toggleAuth()">Login</a>
+          </p>
+        </div>
+      </div>
+
+      <div id="dashboard-section" class="hidden">
+        <button onclick="logout()" class="btn-logout">Logout</button>
+        <h2>User Dashboard</h2>
+
+        <form id="user-form">
+          <input type="hidden" id="user-id" />
+          <input type="text" id="user-name" placeholder="Full Name" required />
+          <input
+            type="email"
+            id="user-email"
+            placeholder="Email Address"
+            required
+          />
+          <button type="submit" id="submit-btn" class="btn-add">
+            Add User
+          </button>
+          <button
+            type="button"
+            onclick="resetForm()"
+            id="cancel-btn"
+            class="hidden"
+          >
+            Cancel
+          </button>
+        </form>
+
+        <div class="search-container" style="margin: 20px 0">
+          <input
+            type="text"
+            id="search-input"
+            placeholder="Search users by name or email..."
+          />
+        </div>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="user-table-body"></tbody>
+        </table>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
